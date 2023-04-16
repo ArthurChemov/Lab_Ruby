@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <style>
+      /* Email styles need to be inline */
+  </style>
+</head>
+
+<body>
+<h1>Authors</h1>
+
+<table>
+  <thead>
+  <tr>
+    <th>Name</th>
+    <th>Surname</th>
+    <th>Bio</th>
+    <th></th>
+    <th></th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @author.each do |author| %>
+    <tr>
+      <td><%= author.name %></td>
+      <td><%= author.surname %></td>
+      <td><%= author.bio %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+</body>
+</html>

@@ -6,22 +6,6 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
-class TestSeeder
-  def self.insert
-    100.times do
-      Test.create(
-        name: Faker::Name.first_name,
-        created_at: Time.now,
-        updated_at: Time.now
-      )
-    end
-  end
-
-  def self.update(id, new_name)
-    test = Test.find(id)
-    test.update(name: new_name, updated_at: Time.now)
-  end
-end
 class AuthorSeeder
   def self.insert
     100.times do

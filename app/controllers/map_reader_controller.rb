@@ -1,4 +1,5 @@
 class MapReaderController < ApplicationController
-  def change
+  def index
+    @map_reader = MapReader.all
   end
 end

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <style>
+      /* Email styles need to be inline */
+  </style>
+</head>
+
+<body>
+<h1>Card Readers</h1>
+
+<table>
+  <thead>
+  <tr>
+    <th>Library id</th>
+    <th>User id</th>
+    <th></th>
+    <th></th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @map_reader.each do |map_reader| %>
+    <tr>
+      <td><%= map_reader.library_id %></td>
+      <td><%= map_reader.user_id %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+</body>
+</html>
