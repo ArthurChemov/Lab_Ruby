@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <style>
+      /* Email styles need to be inline */
+  </style>
+</head>
+
+<body>
+<h1>New Book</h1>
+
+<%= form_with model: @book, url: book_index_path, method: :post do |form| %>
+  <div>
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
+  <div>
+    <%= form.label :year %>
+    <%= form.text_field :year %>
+  </div>
+  <div>
+    <%= form.label :library_id %>
+    <%= form.text_area :library_id %>
+  </div>
+  <div>
+    <%= form.label :author_id %>
+    <%= form.text_area :author_id %>
+  </div>
+  <div>
+    <%= form.label :genre_id %>
+    <%= form.text_area :genre_id %>
+  </div>
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
+
+<%= link_to 'Back', book_index_path %>
+</body>
+</html>

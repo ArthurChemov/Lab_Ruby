@@ -13,8 +13,8 @@
 <table>
   <thead>
   <tr>
-    <th>Library id</th>
-    <th>User id</th>
+    <th>Library ID</th>
+    <th>User ID</th>
     <th></th>
     <th></th>
   </tr>
@@ -24,9 +24,13 @@
     <tr>
       <td><%= map_reader.library_id %></td>
       <td><%= map_reader.user_id %></td>
+      <td><%= link_to 'Show', map_reader_path(map_reader) %></td>
+      <td><%= link_to 'Edit', edit_map_reader_path(map_reader) %></td>
+      <td><%= button_to 'Delete', map_reader_path(map_reader), method: :delete %></td>
     </tr>
   <% end %>
   </tbody>
-</table>
+</table><br>
+<%= link_to 'New Card Reader', new_map_reader_path %>
 </body>
 </html>

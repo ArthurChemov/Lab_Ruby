@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <style>
+      /* Email styles need to be inline */
+  </style>
+</head>
+
+<body>
+<p>Library ID: <%= @map_reader.library_id %></p>
+<p>User ID: <%= @map_reader.user_id %></p>
+
+<%= link_to 'Edit', edit_map_reader_path(@map_reader) %> | <%= link_to 'Back', map_reader_index_path %>
+<%= button_to 'Delete', map_reader_path(@map_reader), method: :delete %>
+</body>
+</html>

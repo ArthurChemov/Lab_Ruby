@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <style>
+      /* Email styles need to be inline */
+  </style>
+</head>
+
+<body>
+<h1>Edit Card Reader</h1>
+
+<%= form_with model: @map_reader, url: map_reader_path(@map_reader), method: :patch do |form| %>
+  <div>
+    <%= form.label :library_id %>
+    <%= form.text_field :library_id %>
+  </div>
+  <div>
+    <%= form.label :user_id %>
+    <%= form.text_area :user_id %>
+  </div>
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
+
+<%= link_to 'Back', map_reader_index_path %>
+</body>
+</html>

@@ -26,9 +26,13 @@
       <td><%= author.name %></td>
       <td><%= author.surname %></td>
       <td><%= author.bio %></td>
+      <td><%= link_to 'Show', author_path(author) %></td>
+      <td><%= link_to 'Edit', edit_author_path(author) %></td>
+      <td><%= button_to 'Delete', author_path(author), method: :delete %></td>
     </tr>
   <% end %>
   </tbody>
-</table>
+</table><br>
+<%= link_to 'New Author', new_author_path %>
 </body>
 </html>

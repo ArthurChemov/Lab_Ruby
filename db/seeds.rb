@@ -21,7 +21,7 @@ class AuthorSeeder
 
   def self.update(id, new_name, new_surname, new_bio)
     author = Author.find(id)
-    author.update(name: new_name, surname: new_surname, bio: new_bio, updated_at: Time.now)
+    author.update_columns(name: new_name, surname: new_surname, bio: new_bio, updated_at: Time.now)
   end
 end
 
@@ -46,7 +46,7 @@ class BookSeeder
 
   def self.update(id, new_title, new_year, library_id, author_id, genre_id)
     book = Book.find(id)
-    book.update(title: new_title, year: new_year, library_id: library_id, author_id: author_id, genre_id: genre_id, updated_at: Time.now)
+    book.update_columns(title: new_title, year: new_year, library_id: library_id, author_id: author_id, genre_id: genre_id, updated_at: Time.now)
   end
 end
 
@@ -63,7 +63,7 @@ class GenreSeeder
 
   def self.update(id, new_name)
     genre = Genre.find(id)
-    genre.update(title: new_name, updated_at: Time.now)
+    genre.update_columns(title: new_name, updated_at: Time.now)
   end
 end
 

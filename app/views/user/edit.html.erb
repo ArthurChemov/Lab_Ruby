@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <style>
+      /* Email styles need to be inline */
+  </style>
+</head>
+
+<body>
+<h1>Edit User</h1>
+
+<%= form_with model: @user, url: user_path(@user), method: :patch do |form| %>
+  <div>
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+  <div>
+    <%= form.label :surname %>
+    <%= form.text_field :surname %>
+  </div>
+  <div>
+    <%= form.label :email %>
+    <%= form.text_area :email %>
+  </div>
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
+
+<%= link_to 'Back', user_index_path %>
+</body>
+</html>

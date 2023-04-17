@@ -1,4 +1,4 @@
 class MapReader < ApplicationRecord
-  belongs_to :library
+  belongs_to :library, optional: true
   has_many :users
 end

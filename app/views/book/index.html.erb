@@ -30,9 +30,13 @@
       <td><%= book.library_id %></td>
       <td><%= book.author_id %></td>
       <td><%= book.genre_id %></td>
+      <td><%= link_to 'Show', book_path(book) %></td>
+      <td><%= link_to 'Edit', edit_book_path(book) %></td>
+      <td><%= button_to 'Delete', book_path(book), method: :delete %></td>
     </tr>
   <% end %>
   </tbody>
 </table>
+<%= link_to 'New Book', new_book_path %>
 </body>
 </html>

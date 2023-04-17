@@ -24,9 +24,13 @@
     <tr>
       <td><%= library.name %></td>
       <td><%= library.address %></td>
+      <td><%= link_to 'Show', library_path(library) %></td>
+      <td><%= link_to 'Edit', edit_library_path(library) %></td>
+      <td><%= button_to 'Delete', library_path(library), method: :delete %></td>
     </tr>
   <% end %>
   </tbody>
 </table>
+<%= link_to 'New Library', new_library_path %>
 </body>
 </html>

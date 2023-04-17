@@ -22,9 +22,13 @@
   <% @genre.each do |genre| %>
     <tr>
       <td><%= genre.name %></td>
+      <td><%= link_to 'Show', genre_path(genre) %></td>
+      <td><%= link_to 'Edit', edit_genre_path(genre) %></td>
+      <td><%= button_to 'Delete', genre_path(genre), method: :delete %></td>
     </tr>
   <% end %>
   </tbody>
 </table>
+<%= link_to 'New Genre', new_genre_path %>
 </body>
 </html>
