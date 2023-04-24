@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_04_14_211111) do
+ActiveRecord::Schema[7.0].define(version: 2023_04_24_174837) do
   create_table "authors", force: :cascade do |t|
     t.string "name"
     t.string "surname"
@@ -30,6 +30,18 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_14_211111) do
     t.index ["author_id"], name: "index_books_on_author_id"
     t.index ["genre_id"], name: "index_books_on_genre_id"
     t.index ["library_id"], name: "index_books_on_library_id"
+  end
+
+  create_table "deviseusers", force: :cascade do |t|
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["email"], name: "index_deviseusers_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_deviseusers_on_reset_password_token", unique: true
   end
 
   create_table "genres", force: :cascade do |t|
