@@ -12,6 +12,8 @@ gem 'tzinfo-data'
 
 gem 'devise', '~> 4.2'
 
+gem 'nokogiri'
+
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
 
