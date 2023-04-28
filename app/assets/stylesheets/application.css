@@ -14,14 +14,14 @@
  *= require_self
  */
 body {
-    background: linear-gradient(to right, #f6d365, #fda085);
+    background: #ADD8E6;
 }
 h1 {
     text-align: center;
 }
 
 button {
-    background: #B11111;
+    background: #dcdcdc;
 }
 tr {
     font-size: 18px;
