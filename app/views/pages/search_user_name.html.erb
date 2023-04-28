@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <style>
+      /* Email styles need to be inline */
+  </style>
+</head>
+
+<body>
+  <h1><%= @user.pluck(:name).join(", ") %> <%= @user.pluck(:surname).join(", ") %></h1>
+  <p><%= @user.pluck(:email).join(", ") %></p>
+  <%= link_to 'Back', library_info_path, class: 'btn btn-primary' %>
+</body>
+</html>

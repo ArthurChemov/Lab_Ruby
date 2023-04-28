@@ -1,7 +1,7 @@
 class MapReaderController < ApplicationController
   before_action :set_map_reader, only: %i[show edit update destroy]
   def index
-    @map_reader = MapReader.all
+    @map_reader = MapReader.paginate(page: params[:page], per_page: 10)
   end
 
   def new

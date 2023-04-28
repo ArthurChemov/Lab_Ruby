@@ -1,7 +1,7 @@
 class LibraryController < ApplicationController
   before_action :set_library, only: %i[show edit update destroy]
   def index
-    @library = Library.all
+    @library = Library.paginate(page: params[:page], per_page: 10)
   end
 
   def new

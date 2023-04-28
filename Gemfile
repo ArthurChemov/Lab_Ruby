@@ -14,6 +14,8 @@ gem 'devise', '~> 4.2'
 
 gem 'nokogiri'
 
+gem 'will_paginate', '~> 3.3.1', :require => nil
+
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
 

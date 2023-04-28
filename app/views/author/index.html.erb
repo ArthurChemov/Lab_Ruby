@@ -5,12 +5,13 @@
   <style>
       /* Email styles need to be inline */
   </style>
-  <link rel="stylesheet" href="application.css">
 </head>
 
 <body>
 <h1>Authors</h1>
 
+<%= link_to 'Links', '/links' %>
+<%= link_to 'New Author', new_author_path %>
 <table>
   <thead>
   <tr>
@@ -33,7 +34,6 @@
     </tr>
   <% end %>
   </tbody>
-</table><br>
-<%= link_to 'New Author', new_author_path %>
+</table><%= will_paginate @author %>
 </body>
 </html>

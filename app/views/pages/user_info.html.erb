@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <style>
+      .search-form {
+          display: flex;
+          justify-content: flex-start;
+      }
+
+      .form-control {
+          margin-left: 10px;
+          margin-right: 10px;
+          border-radius: 4px;
+          border: 1px solid #ccc;
+      }
+  </style>
+</head>
+
+<body>
+<h1>User info</h1>
+
+<%= link_to 'Links', '/links' %>
+<table>
+  <tr style="vertical-align: bottom;">
+    <div class="search-form">
+      <td><%= form_tag search_library_name_path, class: 'form_search', method: :get do %>
+        <%= label_tag :name, 'Search by name:' %>
+        <%= text_field_tag :name, params[:name], class: 'form-control' %></td>
+        <td><%= submit_tag 'Search', class: 'btn btn-primary' %></td>
+      <% end %>
+    </div>
+  </tr>
+</table>
+<table>
+  <thead>
+  <tr>
+    <th>ID</th>
+    <th>Library name</th>
+    <th>Number of books</th>
+    <th>Number of genres</th>
+    <th>Show</th>
+    <th><%= link_to 'Link to library info', "/library_info" %></th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @user.each do |user| %>
+    <tr>
+      <td><%= user.id %></td>
+      <td><%= user.map_reader&.library&.name || '-'%></td>
+      <td><%= Book.where(library_id: user.map_reader&.library_id).count %></td>
+      <td><%= Book.where(id: user.map_reader&.library&.books&.ids, library_id: user.map_reader&.library_id).count %></td>
+      <td><%= link_to 'Link', library_path(user.map_reader&.library) if user.map_reader&.library %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table><%= will_paginate @user %>
+</body>
+</html>

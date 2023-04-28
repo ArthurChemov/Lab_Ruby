@@ -11,6 +11,11 @@ Rails.application.routes.draw do
   resources :map_reader
   resources :user
   get '/links', to: 'pages#links'
+  get '/library_info', to: 'pages#library_info'
+  get '/user_info', to: 'pages#user_info'
+  get '/search_library_name', to: 'pages#search_library_name'
+  get '/search_user_name', to: 'pages#search_user_name'
+  get '/search_user_email', to: 'pages#search_user_email'
   root to: 'pages#links'
   devise_scope :deviseuser do
     get "sign_up", to: "devise/registrations#new"

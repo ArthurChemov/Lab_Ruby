@@ -1,7 +1,7 @@
 class GenreController < ApplicationController
   before_action :set_genre, only: %i[show edit update destroy]
   def index
-    @genre = Genre.all
+    @genre = Genre.paginate(page: params[:page], per_page: 10)
   end
 
   def new

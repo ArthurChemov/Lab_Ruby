@@ -1,3 +1,3 @@
 class User < ApplicationRecord
-  belongs_to :map_reader, optional: true
+  has_one :map_reader
 end

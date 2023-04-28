@@ -2,7 +2,7 @@
 class AuthorController < ApplicationController
   before_action :set_author, only: %i[show edit update destroy]
   def index
-    @author = Author.all
+    @author = Author.paginate(page: params[:page], per_page: 10)
   end
 
   def new

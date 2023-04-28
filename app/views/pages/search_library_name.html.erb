@@ -8,11 +8,8 @@
 </head>
 
 <body>
-<h1>
-  <%= @genre.name %>
-</h1>
-
-<%= link_to 'Edit', edit_genre_path(@genre) %> | <%= link_to 'Back', genre_index_path %>
-<%= button_to 'Delete', genre_path(@genre), method: :delete %>
+  <h1><%= @library.pluck(:name).join(", ") %></h1>
+  <p><%= @library.pluck(:address).join(", ") %></p>
+  <%= link_to 'Back', user_info_path, class: 'btn btn-primary' %>
 </body>
 </html>

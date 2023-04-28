@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <style>
+      .search-form {
+          display: flex;
+          justify-content: flex-start;
+      }
+
+      .form-control {
+          margin-left: 10px;
+          margin-right: 10px;
+          border-radius: 4px;
+          border: 1px solid #ccc;
+      }
+  </style>
+</head>
+
+<body>
+<h1>Library info</h1>
+
+<%= link_to 'Links', '/links' %>
+<table>
+  <tr style="vertical-align: bottom;">
+    <div class="search-form">
+      <td><%= form_tag search_user_name_path, class: 'form_search', method: :get do %>
+          <%= label_tag :name, 'Search by name:' %>
+          <%= text_field_tag :name, params[:name], class: 'form-control' %>
+          <%= label_tag :surname, 'Search by surname:' %>
+          <%= text_field_tag :surname, params[:surname], class: 'form-control' %></td>
+          <td><%= submit_tag 'Search', class: 'btn btn-primary' %></td>
+        <% end %>
+        </div>
+    <div>
+      <td><%= form_tag search_user_email_path, class: 'form_search', method: :get do %>
+          <%= label_tag :email, 'Search by email:' %>
+          <%= text_field_tag :email, params[:email], class: 'form-control' %></td>
+          <td><%= submit_tag 'Search', class: 'btn btn-primary' %></td>
+        <% end %>
+        </div>
+  </tr>
+</table>
+<table>
+  <thead>
+  <tr>
+    <th>ID</th>
+    <th>User name</th>
+    <th>User email</th>
+    <th>Card number</th>
+    <th>Card</th>
+    <th>Show</th>
+    <th><%= link_to 'Link to user info', '/user_info' %></th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @library.each do |library| %>
+    <tr>
+      <td><%= library.id %></td>
+      <td><%= library.map_readers.first&.user&.name %> <%= library.map_readers.first&.user&.surname || '-' %></td>
+      <td><%= library.map_readers.first&.user&.email || '-' %></td>
+      <td><%= library.map_readers.first&.id || '-' %></td>
+      <td><%= link_to 'Link', map_reader_path(library.map_readers.first) if library.map_readers.first %></td>
+      <td><%= link_to 'Link', user_path(library.map_readers.first&.user) if library.map_readers.first&.user %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table><%= will_paginate @library %>
+</body>
+</html>

@@ -1,7 +1,7 @@
 class BookController < ApplicationController
   before_action :set_book, only: %i[show edit update destroy]
   def index
-    @book = Book.all
+    @book = Book.paginate(page: params[:page], per_page: 10)
   end
 
   def new
