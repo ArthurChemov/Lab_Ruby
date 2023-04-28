@@ -16,6 +16,11 @@ gem 'nokogiri'
 
 gem 'will_paginate', '~> 3.3.1', :require => nil
 
+gem 'prawn'
+gem 'prawn-table'
+
+gem 'csv'
+
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
 

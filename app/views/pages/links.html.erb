@@ -11,4 +11,12 @@
   <li><%= link_to 'Sign up', "sign_up" %></li>
   <li><%= link_to 'Sign out', "sign_out" %></li>
   <li><%= link_to 'Users_info', "/user_info" %></li>
+  <div style="margin-bottom: 10px; margin-top: 10px">
+    <%= link_to 'Download Libraries_users_info.csv', download_libraries_users_info_csv_path, class: 'btn btn-primary' %>
+  </div>
+  <div>
+    <span style="margin-right: 10px"><%= link_to 'Download Libraries_users_info.pdf', download_libraries_users_info_pdf_path, class: 'btn btn-primary' %></span>
+    <span style="margin-right: 10px"><%= link_to 'Download Libraries_info.pdf', download_libraries_info_pdf_path, class: 'btn btn-primary' %></span>
+    <span><%= link_to 'Download Users_info.pdf', download_users_info_pdf_path, class: 'btn btn-primary' %></span>
+  </div>
 </ul>
